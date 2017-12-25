@@ -35,14 +35,63 @@ class WebpackAdminDashboard {
 			// 	console.log(chunk["id"]);
 			// 	console.log(chunk["name"]);
 			// }
-			console.log(stats.compilation["chunks"][0]["id"]);
-			console.log(stats.compilation["chunks"][0]["name"]);
-			console.log(stats.compilation["chunks"][0]["entrypoints"]);
+			console.log(stats.hasErrors());
+			console.log(stats.hasWarnings());
+			// console.log(stats.compilation.preparedChunks);
+			// console.log(stats.compilation.modules);
+			// console.log(Object.keys(stats.compilation.modules));
+			// console.log(stats.compilation.performance.maxAssetSize);
+			// console.log(stats.compilation.errors);
+			// console.log(stats.compilation["chunks"][0]["id"]);
+			// console.log(stats.compilation["chunks"][0]["name"]);
+			// console.log(stats.compilation["chunks"][0]["entrypoints"]);
+			var chunks = stats.compilation["chunks"];
 			var entryPoints = stats.compilation["chunks"][0]["entrypoints"][0];
-			entryPoints.chunks.forEach((chunk) => {
-				console.log(chunk["name"]);
-				console.log(chunk["name"]["entrypoints"]);
+			// entryPoints.chunks.forEach((chunk) => {
+			// 	console.log(chunk["name"]);
+			// })
+			// chunks.forEach(chunk => {
+			// 	console.log("=========");
+			// 	console.log(chunk["name"]);
+			// 	// console.log(chunk.files);
+			// 	var chunkKeys = Object.keys(chunk);
+			// 	console.log(chunkKeys);
+			// 	console.log(chunk["id"]);
+			// 	console.log(chunk["ids"]);
+			// 	console.log(chunk["debugId"]);
+			// 	console.log(chunk["entrypoints"]);
+			// 	// console.log(chunk["chunks"]);
+			// 	// console.log(chunk["parents"]);
+			// 	// console.log(chunk["blocks"]);
+			// 	// console.log(chunk["origins"]);
+			// 	console.log(chunk["files"]);
+			// 	console.log(chunk["rendered"]);
+			// 	// console.log(chunk["entryModule"]);
+
+			// })
+
+			// console.log(stats.compilation.outputOptions);
+			// console.log(stats.compilation.profile);
+			// console.log(stats.compilation.entries);
+			// console.log(stats.compilation.entrypoints);
+			// console.log(stats.compilation.records);
+			var assets = stats.compilation.assets;
+			// console.log(assets);
+			console.log(Object.keys(assets));
+			(Object.keys(assets)).forEach(asset => {
+				console.log("---------");
+				console.log(assets[asset]["_cachedSize"]);
+				console.log(assets[asset]["emitted"]);
+				console.log(assets[asset]["existsAt"]);
 			})
+			// console.log(Object.keys(assets["app.js"]));
+			// console.log(assets["app.js"]["_cachedSize"]);
+			// console.log(assets["app.js"]["source"]);
+			// console.log(assets["app.js"]["existsAt"]);
+			// console.log(assets["app.js"]["emitted"]);
+			console.log(stats.compilation.errors);
+			// console.log(stats.compilation.warnings);
+			console.log(stats.compilation.name);
 
 
 			// console.log(stats.compilation["chunks"]);
