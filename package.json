@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/vijaykumar51/webpack-admin-dashboard/issues"
   },
-  "homepage": "https://github.com/vijaykumar51/webpack-admin-dashboard#readme"
+  "homepage": "https://github.com/vijaykumar51/webpack-admin-dashboard#readme",
+  "devDependencies": {
+    "node-notifier": "^5.1.2"
+  },
+  "dependencies": {
+    "circular-json": "^0.5.1"
+  }
 }
